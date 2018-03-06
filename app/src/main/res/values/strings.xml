@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Beer Guru</string>
+
+    <!-- Beer Rating Layout Strings -->
+    <string name="brewery_name_text">Brewery</string>
+    <string name="brewery_name_hint">Select Brewery</string>
+    <string name="beer_name_text">Beer Name</string>
+    <string name="beer_name_hint">Select Beer</string>
+    <!-- Beer Details -->
+    <string name="beer_details_text">Beer Details</string>
+    <string name="style_text">Style</string>
+    <string name="style_hint">Beer Style</string>
+    <string name="ibu_text">IBU</string>
+    <string name="ibu_hint">50</string>
+    <string name="srm_text">SRM</string>
+    <string name="srm_hint">10</string>
+    <string name="og_text">O.G.</string>
+    <string name="og_hint">1.012</string>
+    <string name="abv">4.5</string>
+    <!-- Beer Ratings -->
+    <string name="ratings_text">Ratings</string>
+    <string name="appearance_text">Appearance</string>
+    <string name="smell_text">Appearance</string>
+    <string name="taste_text">Appearance</string>
+    <string name="mouthfeel_text">Appearance</string>
+    <string name="overall_text">Appearance</string>
+    <string name="notes_text">Notes</string>
+    <string name="notes_hint">Enter beer notes</string>
+
 </resources>
