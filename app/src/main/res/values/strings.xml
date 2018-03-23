@@ -21,7 +21,7 @@
     <!-- Beer Ratings -->
     <string name="ratings_text">Rating</string>
     <string name="appearance_text">Appearance</string>
-    <string name="smell_text">Smell</string>
+    <string name="aroma_text">Aroma</string>
     <string name="taste_text">Taste</string>
     <string name="mouthfeel_text">Feel</string>
     <string name="overall_text">Overall</string>

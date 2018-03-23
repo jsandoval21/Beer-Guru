@@ -10,13 +10,15 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 public class BeerFragment extends Fragment {
-    private Beer mBeer;     //beer object
-    private EditText mBreweryName;      //Brewery name EditText field
+    private Beer_Ratings mBeerRating;       //beer object
+    private EditText mBeerName;             //Select Beer
+    private EditText mBreweryName;          //Select Brewery
+    private EditText mStyle;                //Select Style
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        mBeer = new Beer();     //initialize beer object
+        mBeerRating = new Beer_Ratings();     //initialize beer object
     }
 
     @Override
@@ -33,7 +35,7 @@ public class BeerFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mBeer.setmBrewery(s.toString());
+                mBeerRating.setmBrewery(s.toString());
             }
 
             @Override
