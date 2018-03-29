@@ -66,7 +66,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/style"
+            android:id="@+id/beer_style"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -111,7 +111,7 @@
             android:text="@string/appearance_text" />
 
         <RatingBar
-            android:id="@+id/look_rating"
+            android:id="@+id/appearance_rating"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -195,7 +195,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:numStars="5" />
+            android:numStars="5"
+            android:clickable="false"/>
 
     </LinearLayout>
 
@@ -205,7 +206,7 @@
         android:text="@string/notes_text" />
 
     <EditText
-        android:id="@+id/addt_notes"
+        android:id="@+id/taste_notes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/edittext_border"

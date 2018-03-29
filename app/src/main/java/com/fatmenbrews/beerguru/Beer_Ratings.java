@@ -10,7 +10,7 @@ public class Beer_Ratings extends Beer {
     private double mTaste;          //Beer Taste Rating
     private double mFeel;           //Beer Feel Rating
     private double mOverall;        //Beer Overall Rating
-    private String mNotes;          //Beer Notes
+    private String mTasteNotes;          //Beer Notes
 
     public double getmAppearance() {
         return mAppearance;
@@ -52,11 +52,11 @@ public class Beer_Ratings extends Beer {
         this.mOverall = mOverall;
     }
 
-    public String getmNotes() {
-        return mNotes;
+    public String setmTasteNotes() {
+        return mTasteNotes;
     }
 
-    public void setmNotes(String mNotes) {
-        this.mNotes = mNotes;
+    public void getmTasteNotes(String mNotes) {
+        this.mTasteNotes = mNotes;
     }
 }

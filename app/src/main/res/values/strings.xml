@@ -26,6 +26,6 @@
     <string name="mouthfeel_text">Feel</string>
     <string name="overall_text">Overall</string>
     <string name="notes_text">Notes</string>
-    <string name="notes_hint">Enter beer notes</string>
+    <string name="notes_hint">Tasting Notes</string>
 
 </resources>
