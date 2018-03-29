@@ -127,7 +127,6 @@ public class BeerFragment extends Fragment {
         });
 
         mOverallRating = v.findViewById(R.id.overall_rating);
-        mOverallRating.setClickable(false);
 
         mAppearanceRating = v.findViewById(R.id.appearance_rating);
         mAppearanceRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
