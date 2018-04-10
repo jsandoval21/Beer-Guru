@@ -45,7 +45,7 @@ public class BeerFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mBeerRating.setmBeerName(s.toString());
+                mBeerRating.setBeerName(s.toString());
             }
 
             @Override
@@ -63,7 +63,7 @@ public class BeerFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mBeerRating.setmBrewery(s.toString());
+                mBeerRating.setBrewery(s.toString());
             }
 
             @Override
@@ -81,7 +81,7 @@ public class BeerFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mBeerRating.setmStyle(s.toString());
+                mBeerRating.setStyle(s.toString());
             }
 
             @Override
@@ -99,7 +99,7 @@ public class BeerFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mBeerRating.setmABV(s.toString());
+                mBeerRating.setABV(s.toString());
             }
 
             @Override
@@ -117,7 +117,7 @@ public class BeerFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mBeerRating.setmIBU(s.toString());
+                mBeerRating.setIBU(s.toString());
             }
 
             @Override
@@ -133,7 +133,7 @@ public class BeerFragment extends Fragment {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
                 updateOverallRating();
-                mBeerRating.setmAppearance(mAppearanceRating.getRating());
+                mBeerRating.setAppearance(mAppearanceRating.getRating());
                 Toast.makeText(getContext(), String.valueOf(ratingBar.getRating()), Toast.LENGTH_SHORT).show();
             }
         });
@@ -143,7 +143,7 @@ public class BeerFragment extends Fragment {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
                 updateOverallRating();
-                mBeerRating.setmAroma(mAromaRating.getRating());
+                mBeerRating.setAroma(mAromaRating.getRating());
                 Toast.makeText(getContext(), String.valueOf(ratingBar.getRating()), Toast.LENGTH_SHORT).show();
             }
         });
@@ -153,7 +153,7 @@ public class BeerFragment extends Fragment {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
                 updateOverallRating();
-                mBeerRating.setmTaste(mTasteRating.getRating());
+                mBeerRating.setTaste(mTasteRating.getRating());
                 Toast.makeText(getContext(), String.valueOf(ratingBar.getRating()), Toast.LENGTH_SHORT).show();
             }
         });
@@ -163,7 +163,7 @@ public class BeerFragment extends Fragment {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
                 updateOverallRating();
-                mBeerRating.setmFeel(mFeelRating.getRating());
+                mBeerRating.setFeel(mFeelRating.getRating());
                 Toast.makeText(getContext(), String.valueOf(ratingBar.getRating()), Toast.LENGTH_SHORT).show();
             }
         });
@@ -177,7 +177,7 @@ public class BeerFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mBeerRating.setmTasteNotes();
+                mBeerRating.setTasteNotes();
             }
 
             @Override
@@ -195,6 +195,6 @@ public class BeerFragment extends Fragment {
                 (mAppearanceRating.getRating() + mAromaRating.getRating()
                         + mTasteRating.getRating() + mFeelRating.getRating()) / 4
         );
-        mBeerRating.setmOverall(mOverallRating.getRating());
+        mBeerRating.setOverall(mOverallRating.getRating());
     }
 }

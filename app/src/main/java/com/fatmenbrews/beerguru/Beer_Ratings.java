@@ -12,51 +12,51 @@ public class Beer_Ratings extends Beer {
     private double mOverall;        //Beer Overall Rating
     private String mTasteNotes;          //Beer Notes
 
-    public double getmAppearance() {
+    public double getAppearance() {
         return mAppearance;
     }
 
-    public void setmAppearance(double mAppearance) {
+    public void setAppearance(double mAppearance) {
         this.mAppearance = mAppearance;
     }
 
-    public double getmAroma() {
+    public double getAroma() {
         return mAroma;
     }
 
-    public void setmAroma(double mAroma) {
+    public void setAroma(double mAroma) {
         this.mAroma = mAroma;
     }
 
-    public double getmTaste() {
+    public double getTaste() {
         return mTaste;
     }
 
-    public void setmTaste(double mTaste) {
+    public void setTaste(double mTaste) {
         this.mTaste = mTaste;
     }
 
-    public double getmFeel() {
+    public double getFeel() {
         return mFeel;
     }
 
-    public void setmFeel(double mFeel) {
+    public void setFeel(double mFeel) {
         this.mFeel = mFeel;
     }
 
-    public double getmOverall() {
+    public double getOverall() {
         return mOverall;
     }
 
-    public void setmOverall(double mOverall) {
+    public void setOverall(double mOverall) {
         this.mOverall = mOverall;
     }
 
-    public String setmTasteNotes() {
+    public String setTasteNotes() {
         return mTasteNotes;
     }
 
-    public void getmTasteNotes(String mNotes) {
+    public void getTasteNotes(String mNotes) {
         this.mTasteNotes = mNotes;
     }
 }

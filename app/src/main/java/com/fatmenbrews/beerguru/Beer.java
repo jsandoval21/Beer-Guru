@@ -22,43 +22,43 @@ public class Beer {
         return mId;
     }
 
-    public String getmBrewery() {
+    public String getBrewery() {
         return mBrewery;
     }
 
-    public void setmBrewery(String mBrewery) {
+    public void setBrewery(String mBrewery) {
         this.mBrewery = mBrewery;
     }
 
-    public String getmBeerName() {
+    public String getBeerName() {
         return mBeerName;
     }
 
-    public void setmBeerName(String mBeerName) {
+    public void setBeerName(String mBeerName) {
         this.mBeerName = mBeerName;
     }
 
-    public String getmStyle() {
+    public String getStyle() {
         return mStyle;
     }
 
-    public void setmStyle(String mStyle) {
+    public void setStyle(String mStyle) {
         this.mStyle = mStyle;
     }
 
-    public String getmABV() {
+    public String getABV() {
         return mABV;
     }
 
-    public void setmABV(String mABV) {
+    public void setABV(String mABV) {
         this.mABV = mABV;
     }
 
-    public String getmIBU() {
+    public String getIBU() {
         return mIBU;
     }
 
-    public void setmIBU(String mIBU) {
+    public void setIBU(String mIBU) {
         this.mIBU = mIBU;
     }
 }
