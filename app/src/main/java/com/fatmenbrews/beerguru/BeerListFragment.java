@@ -24,7 +24,7 @@ public class BeerListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_beer_list, container, false);
 
-        mBeerRecyclerView = (RecyclerView) view.findViewById(R.id.beer_recycler_view);
+        mBeerRecyclerView = view.findViewById(R.id.beer_recycler_view);
         mBeerRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         updateUI();
@@ -39,16 +39,34 @@ public class BeerListFragment extends Fragment {
         mBeerRecyclerView.setAdapter(mAdapter);
     }
 
-    //View Holder: Holds beer data to show in main page (listview)
     private class BeerHolder extends RecyclerView.ViewHolder {
-        public TextView mBeerNameView;
+        //View Holder: Holds beer data to show in main page (listview)
+        private TextView mBeerNameView;
+        private TextView mBeerStyleView;
+        private TextView mBeerAbvView;
+        private TextView mBeerIbuView;
+
+        private Beer_Ratings mBeer;
 
         public BeerHolder(View itemView) {
             super(itemView);
 
-            mBeerNameView = (TextView) itemView;
+            mBeerNameView = itemView.findViewById(R.id.list_item_beer_name);
+            mBeerStyleView = itemView.findViewById(R.id.list_item_beer_style);
+            mBeerAbvView = itemView.findViewById(R.id.list_item_beer_abv);
+            mBeerIbuView = itemView.findViewById(R.id.list_item_beer_ibu);
         }
+
+        public void bindBeer(Beer_Ratings beer) {
+            mBeer = beer;
+            mBeerNameView.setText(mBeer.getBeerName());
+            mBeerStyleView.setText(mBeer.getStyle());
+            mBeerAbvView.setText(mBeer.getABV());
+            mBeerIbuView.setText(mBeer.getIBU());
+        }
+
     }
+
 
     //Adapter
     private class BeerAdapter extends RecyclerView.Adapter<BeerHolder> {
@@ -61,14 +79,14 @@ public class BeerListFragment extends Fragment {
         @Override
         public BeerHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-            View view = layoutInflater.inflate(android.R.layout.simple_list_item_1, parent, false);
+            View view = layoutInflater.inflate(R.layout.list_item_beer, parent, false);
             return new BeerHolder(view);
         }
 
         @Override
         public void onBindViewHolder (BeerHolder holder, int position) {
-            Beer beer = mBeers.get(position);
-            holder.mBeerNameView.setText(beer.getBeerName());
+            Beer_Ratings beer = mBeers.get(position);
+            holder.bindBeer(beer);
         }
 
         @Override
