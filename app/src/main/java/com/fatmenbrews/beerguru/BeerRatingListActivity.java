@@ -6,11 +6,11 @@ import android.support.v4.app.Fragment;
  * Created by Juan on 5/21/2018.
  */
 
-public class BeerListActivity extends SingleFragmentActivity {
+public class BeerRatingListActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
-        return new BeerListFragment();
+        return new BeerRatingListFragment();
     }
 
 }

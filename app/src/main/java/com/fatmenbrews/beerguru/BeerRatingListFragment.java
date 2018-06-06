@@ -1,5 +1,6 @@
 package com.fatmenbrews.beerguru;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,7 +16,7 @@ import java.util.List;
  * Created by Juan on 5/21/2018.
  */
 
-public class BeerListFragment extends Fragment {
+public class BeerRatingListFragment extends Fragment {
     private RecyclerView mBeerRecyclerView;
     private BeerAdapter mAdapter;
 
@@ -31,15 +32,25 @@ public class BeerListFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateUI();
+    }
+
     private void updateUI() {
         BeerLab beerLab = BeerLab.get(getActivity());
         List<Beer_Ratings> beers = beerLab.getBeers();
 
-        mAdapter = new BeerAdapter(beers);
-        mBeerRecyclerView.setAdapter(mAdapter);
+        if(mAdapter == null) {
+            mAdapter = new BeerAdapter(beers);
+            mBeerRecyclerView.setAdapter(mAdapter);
+        } else {
+            mAdapter.notifyDataSetChanged();
+        }
     }
 
-    private class BeerHolder extends RecyclerView.ViewHolder {
+    private class BeerHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         //View Holder: Holds beer data to show in main page (listview)
         private TextView mBeerNameView;
         private TextView mBeerStyleView;
@@ -50,6 +61,7 @@ public class BeerListFragment extends Fragment {
 
         public BeerHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
 
             mBeerNameView = itemView.findViewById(R.id.list_item_beer_name);
             mBeerStyleView = itemView.findViewById(R.id.list_item_beer_style);
@@ -63,6 +75,12 @@ public class BeerListFragment extends Fragment {
             mBeerStyleView.setText(mBeer.getStyle());
             mBeerAbvView.setText(mBeer.getABV());
             mBeerIbuView.setText(mBeer.getIBU());
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = BeerRatingActivity.newIntent(getActivity(), mBeer.getmId());
+            startActivity(intent);
         }
 
     }

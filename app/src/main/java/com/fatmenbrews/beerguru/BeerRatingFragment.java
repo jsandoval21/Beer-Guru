@@ -11,7 +11,12 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
-public class BeerFragment extends Fragment {
+import java.util.UUID;
+
+public class BeerRatingFragment extends Fragment {
+
+    public static final String ARG_BEER_ID = "beer_id";
+
     private Beer_Ratings mBeerRating;       //beer object
     private EditText mBeerName;             //Select Beer
     private EditText mBreweryName;          //Select Brewery
@@ -25,10 +30,22 @@ public class BeerFragment extends Fragment {
     private RatingBar mOverallRating;
     private EditText mRatingNotes;
 
+    public static BeerRatingFragment newInstance(UUID beerId){
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_BEER_ID, beerId);
+
+        BeerRatingFragment fragment = new BeerRatingFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        mBeerRating = new Beer_Ratings();     //initialize beer object
+
+        UUID beerId = (UUID) getArguments().getSerializable(ARG_BEER_ID);
+
+        mBeerRating = BeerLab.get(getActivity()).getBeer(beerId);
     }
 
     @Override
@@ -37,6 +54,7 @@ public class BeerFragment extends Fragment {
         View v = inflater.inflate(R.layout.beer_fragment, container, false);
 
         mBeerName = v.findViewById(R.id.beer_name);
+        mBeerName.setText(mBeerRating.getBeerName());
         mBeerName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -73,6 +91,7 @@ public class BeerFragment extends Fragment {
         });
 
         mStyle = v.findViewById(R.id.beer_style);
+        mStyle.setText(mBeerRating.getStyle());
         mStyle.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -91,6 +110,7 @@ public class BeerFragment extends Fragment {
         });
 
         mABV = v.findViewById(R.id.abv);
+        mABV.setText(mBeerRating.getABV());
         mABV.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -109,6 +129,7 @@ public class BeerFragment extends Fragment {
         });
 
         mIBU = v.findViewById(R.id.ibu);
+        mIBU.setText(mBeerRating.getIBU());
         mIBU.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
